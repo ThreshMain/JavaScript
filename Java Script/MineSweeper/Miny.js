@@ -35,6 +35,7 @@ function setup() {
 }
 
 function start(seed, size) {
+  saveDrawArr = [];
   minesCount = 0;
   seedSeeds = seed;
   velikostX = size;
@@ -65,6 +66,7 @@ function start(seed, size) {
 }
 
 function startWithMoreArg(seed, sizeX, sizeY) {
+  saveDrawArr = [];
   minesCount = 0;
   seedSeeds = seed;
   velikostX = sizeX;
@@ -72,10 +74,9 @@ function startWithMoreArg(seed, sizeX, sizeY) {
   var done = false;
   mine = [];
   drawArr = [];
-  let zeroLine = [];
   for (var x = 0; x < sizeX; x++) {
     let line = [];
-    zeroLine = [];
+    let zeroLine = [];
     for (var y = 0; y < sizeY; y++) {
       zeroLine.push(-1);
       if (Math.floor(Math.random() * seed) === 1) {
